@@ -1,6 +1,5 @@
 package com.web.oop.phone;
 
-import com.sun.java.swing.plaf.motif.resources.motif;
 
 /**
  * 手机测试类
