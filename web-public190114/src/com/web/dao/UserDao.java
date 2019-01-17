@@ -1,5 +1,7 @@
 package com.web.dao;
 
+import java.util.List;
+
 import com.web.model.User;
 
 public interface UserDao {
@@ -22,5 +24,5 @@ public interface UserDao {
 	 * 查询操作
 	 * @param user
 	 */
-	public void query(User user);
+	public List<User> query(User user);
 }

@@ -1,10 +1,18 @@
 package com.web.dao.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
+import org.apache.commons.beanutils.BeanUtils;
+
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.web.dao.UserDao;
 import com.web.model.User;
 import com.web.util.JdbcUtil;
@@ -24,7 +32,11 @@ public class UserDaoImpl implements UserDao {
 
 	@Override
 	public void mod(User user) {
-		// TODO Auto-generated method stub
+		String sql = "update user set account ='"+ user.getAccount()+"' "
+				+ ", password = '"+ user.getPassword()+"'"
+						+ ",name = '"+user.getName()+ "' "
+								+ "where id = " + user.getId();
+		JdbcUtil.execute(sql);
 
 	}
 
@@ -35,9 +47,27 @@ public class UserDaoImpl implements UserDao {
 	}
 
 	@Override
-	public void query(User user) {
-		// TODO Auto-generated method stub
-
+	public List<User> query(User user) {
+		String sql = "select * from user where id !='' ";
+		if(user.getAccount() !=null && user.getAccount() !="") {
+			sql += " and account like '" + user.getAccount() + "'";
+		}
+		if(user.getPassword()!=null && user.getPassword() !="") {
+			sql += " and password = '" +user.getPassword() + "'";
+		}
+		if(user.getName() !=null && user.getName() !="") {
+			sql += " and name = '" + user.getName() + "'";
+		}
+		if(user.getAge() !=null) {
+			sql += " and age = " + user.getAge();
+		}
+		return JdbcUtil.executeQueryF(sql, User.class);
 	}
 
+	
+	
+	
+	
+	
+	
 }
