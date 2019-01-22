@@ -9,4 +9,27 @@
   <welcome-file-list>
   	<welcome-file>login.html</welcome-file>
   </welcome-file-list>
+  
+  <!-- 声明一个servelt对象 -->
+  <servlet>
+  	<servlet-name>testServlet</servlet-name>
+  	<servlet-class>com.web.servlet.TestServlet</servlet-class>
+  </servlet>
+ <!--  <servlet>
+  	<servlet-name>testHttpServlet</servlet-name>
+  	<servlet-class>com.web.servlet.TestHttpServlet</servlet-class>
+ 	启动的时候就初始化servlet容器
+ 	<load-on-startup>1</load-on-startup>
+  </servlet> -->
+  
+  <!-- 配置对应servlet的访问地址 -->
+  <servlet-mapping>
+  	<servlet-name>testServlet</servlet-name>
+  	<url-pattern>/test</url-pattern>
+  </servlet-mapping>
+  <!-- <servlet-mapping>
+  	<servlet-name>testHttpServlet</servlet-name>
+  	<url-pattern>/testHttp</url-pattern>
+  </servlet-mapping> -->
+ 
 </web-app>

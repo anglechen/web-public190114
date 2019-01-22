@@ -1,18 +1,6 @@
 package com.web.dao.impl;
 
-import java.lang.reflect.InvocationTargetException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-
-import org.apache.commons.beanutils.BeanUtils;
-
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
 import com.web.dao.UserDao;
 import com.web.model.User;
 import com.web.util.JdbcUtil;
