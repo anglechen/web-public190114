@@ -22,8 +22,10 @@ public class TestHttpServlet extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		PrintWriter print = resp.getWriter();
-		print.write("this is a get");
+//		PrintWriter print = resp.getWriter();
+//		print.write("this is a get");
+		req.setAttribute("testAttr", "33333333333");
+		req.getRequestDispatcher("login.jsp").forward(req, resp);
 	}
 
 	@Override

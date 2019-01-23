@@ -10,9 +10,15 @@ import com.alibaba.fastjson.JSONObject;
 import com.web.model.User;
 
 public class JsonUtil {
-	
+	/**
+	 * 用来把map转换为bean
+	 * @param parameters
+	 * @param clazz
+	 * @return
+	 */
 	public static <T>  T mapToJavaObject(Map<String,String[]> parameters , Class<T> clazz) {
 		Map<String, String> parameterMap = new HashMap<>();
+		//遍历参数的map对象
 		Set<Entry<String, String[]>> entrys = parameters.entrySet();
 		for(Entry<String, String[]> entry : entrys ) {
 			String key = entry.getKey();

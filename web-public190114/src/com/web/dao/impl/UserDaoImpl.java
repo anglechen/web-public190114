@@ -1,5 +1,8 @@
 package com.web.dao.impl;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import com.web.dao.UserDao;
 import com.web.model.User;
@@ -11,10 +14,12 @@ public class UserDaoImpl implements UserDao {
 	
 	@Override
 	public void add(User user) {
-		String sql = "insert into user(account,password,name)"
+		Date date = user.getBirthday();
+		SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd");
+		String sql = "insert into user(account,password,name,age,status,birthday)"
 				+ " values('"+ user.getAccount() +"',"
-						+ "'"+ user.getPassword()+"',"
-								+ "'"+ user.getName()+"')";
+				+ "'"+ user.getPassword()+"', '"+ user.getName()+"',"
+						+ ""+ user.getAge()+","+ user.getStatus()+",'"+ sf.format(date) +"')";
 		JdbcUtil.execute(sql);
 	}
 

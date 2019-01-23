@@ -31,5 +31,21 @@
   	<servlet-name>testHttpServlet</servlet-name>
   	<url-pattern>/testHttp</url-pattern>
   </servlet-mapping> -->
+  
+  <!-- 
+  <filter>
+  	<filter-name>charFilter</filter-name>
+  	<filter-class>com.web.filter.CharFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>charFilter</filter-name>
+  	<url-pattern>/user/*</url-pattern>
+  </filter-mapping>
+   -->
+  
+  
+<!--   <listener>
+  	<listener-class>com.web.listener.ServiceListener</listener-class>
+  </listener> -->
  
 </web-app>

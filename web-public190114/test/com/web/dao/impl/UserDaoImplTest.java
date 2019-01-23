@@ -5,12 +5,31 @@ import static org.junit.Assert.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 
 import com.web.model.User;
 import com.web.util.JdbcUtil;
 
 public class UserDaoImplTest {
+	
+	@Before
+	public void before() {
+		System.out.println("这里是before方法内容");
+	}
+	
+	@After
+	public void after() {
+		System.out.println("这里是after方法内容");
+	}
+	
+	@Test
+	public void testTemp() {
+		System.out.println("这里是真正执行test方法内容");
+	}
+	
+	
 
 	@Test
 	public void testAdd() {
